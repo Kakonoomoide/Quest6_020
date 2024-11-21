@@ -14,6 +14,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -115,7 +116,7 @@ fun RencanaStudiView(
                 Text("Pilih Mata Kuliah Peminatan",
                     fontWeight = FontWeight.Bold
                 )
-                Text("Silahkan pilih mata kulah yang anda inginkan",
+                Text("Silahkan pilih mata kuliah yang anda inginkan",
                     fontSize = 12.sp,
                     fontWeight = FontWeight.Light
                 )
@@ -128,7 +129,17 @@ fun RencanaStudiView(
                         chosenDropdown = it
                     }
                 )
-
+                Spacer(modifier = Modifier.padding(8.dp))
+                HorizontalDivider()
+                Spacer(modifier = Modifier.padding(8.dp))
+                Text("Pilih Kelas Belajar",
+                    fontWeight = FontWeight.Bold
+                )
+                Text("Silahkan pilih kelas dari mata kuliah yang anda inginkan",
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.Light
+                )
+                Spacer(modifier = Modifier.padding(8.dp))
             }
         }
     }
