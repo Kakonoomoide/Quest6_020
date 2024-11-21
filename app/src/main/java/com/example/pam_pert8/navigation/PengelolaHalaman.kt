@@ -41,6 +41,17 @@ fun PengelolaanHalaman(
                 )
             })
         }
-
+        composable(route = Halaman.InputMahasiswa.name){
+            MahasiswaFormView(
+                onSubmitButtonClicked = {
+                    mahasiswaViewModel.saveDataMhs(it)
+                    navController.navigate(Halaman.InputMatakuliah.name)
+                },
+                onBackButtonClicked = {
+                    navController.popBackStack()
+                },
+                modifier = Modifier
+            )
+        }
     }
 }
