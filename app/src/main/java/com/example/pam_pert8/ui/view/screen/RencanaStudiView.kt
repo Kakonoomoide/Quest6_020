@@ -31,7 +31,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pam_pert8.R
+import com.example.pam_pert8.data.MataKuliah
 import com.example.pam_pert8.model.Mahasiswa
+import com.example.pam_pert8.ui.widget.DynamicSelectedField
 
 @Composable
 fun RencanaStudiView(
@@ -117,7 +119,15 @@ fun RencanaStudiView(
                     fontSize = 12.sp,
                     fontWeight = FontWeight.Light
                 )
-                Spacer(modifier = Modifier.padding(16.dp))
+                Spacer(modifier = Modifier.padding(8.dp))
+                DynamicSelectedField(
+                    selectedValue = chosenDropdown,
+                    options = MataKuliah.options,
+                    lable = "Mata Kuliah",
+                    onValueChangedEvent = {
+                        chosenDropdown = it
+                    }
+                )
 
             }
         }
