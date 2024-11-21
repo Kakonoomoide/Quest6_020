@@ -88,7 +88,7 @@ fun MahasiswaFormView(
                 Text("Unggul dan Islami",
                     color = Color.Red,
                     fontSize = 15.sp,
-                    fontWeight = FontWeight.Bold
+                    fontWeight = FontWeight.Light
                 )
             }
             Spacer(modifier = Modifier.padding(16.dp))
