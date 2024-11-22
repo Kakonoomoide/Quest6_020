@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
@@ -101,7 +102,37 @@ fun DetailView(
                 )
                 .fillMaxSize(),
         ){
+            Column (
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            )
+            {
+                inputDataMhs.forEach{ data ->
 
+
+                }
+
+            }
         }
+    }
+}
+
+@Composable
+fun DetailMhs(
+    judul: String, isinya: String
+){
+    Row (
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(10.dp)
+    ){
+        Text(text = judul,
+            modifier = Modifier.weight(0.8f))
+        Text(text = " : ",
+            modifier = Modifier.weight(0.2f))
+        Text(text = isinya,
+            modifier = Modifier.weight(2f))
     }
 }
