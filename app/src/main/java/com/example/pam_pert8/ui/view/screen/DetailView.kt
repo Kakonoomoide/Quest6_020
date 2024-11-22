@@ -12,4 +12,11 @@ fun DetailView(
     dataMkMhs : RencanaStudi,
     onBackClicked : () -> Unit
 ){
+    val inputDataMhs = listOf(
+        Pair("NIM", dataDiriMhs.nim),
+        Pair("Nama", dataDiriMhs.nama),
+        Pair("Email", dataDiriMhs.email),
+        Pair("Matakuliah", dataMkMhs.namaMk),
+        Pair("Kelas", dataMkMhs.kelasMk)
+    )
 }
