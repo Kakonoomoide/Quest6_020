@@ -14,6 +14,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -110,10 +111,18 @@ fun DetailView(
             )
             {
                 inputDataMhs.forEach{ data ->
-
-
+                   DetailMhs(
+                       judul = data.first,
+                       isinya = data.second
+                   )
                 }
-
+                ElevatedButton(
+                    onClick = onBackClicked,
+                    modifier = Modifier
+                        .padding(top = 16.dp)
+                ) {
+                    Text("Kembali")
+                }
             }
         }
     }
