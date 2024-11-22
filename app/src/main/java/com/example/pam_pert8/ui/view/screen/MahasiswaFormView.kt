@@ -41,7 +41,6 @@ import com.example.pam_pert8.R
 
 @Composable
 fun MahasiswaFormView(
-    modifier: Modifier,
     onSubmitButtonClicked: (MutableList<String>) -> Unit,
     onBackButtonClicked: () -> Unit
 ){
@@ -91,103 +90,103 @@ fun MahasiswaFormView(
                     fontWeight = FontWeight.Light
                 )
             }
-            Spacer(modifier = Modifier.padding(16.dp))
-            Box (
+        }
+        Spacer(modifier = Modifier.padding(16.dp))
+        Box (
+            modifier = Modifier
+                .background(
+                    color = Color.White,
+                    shape = RoundedCornerShape(
+                        topEnd = 15.dp,
+                        topStart = 15.dp
+                    )
+                )
+                .fillMaxSize()
+        ){
+            Column (
                 modifier = Modifier
-                    .background(
-                        color = Color.White,
-                        shape = RoundedCornerShape(
-                            topEnd = 15.dp,
-                            topStart = 15.dp
-                        )
-                    )
                     .fillMaxSize()
-            ){
-                Column (
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(16.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally
+                    .padding(16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
 
+            ){
+                Text("Masukan Data Kamu",
+                    fontWeight = FontWeight.Light
+                )
+                Text("Isi sesuai data yang kamu daftarkan",
+                    fontWeight = FontWeight.Light
+                )
+                Spacer(modifier = Modifier.padding(16.dp))
+                OutlinedTextField(
+                    modifier = Modifier.fillMaxWidth(),
+                    value = nim,
+                    onValueChange = {nim = it},
+                    label = { Text(text = "No Induk Mahasiswa")},
+                    leadingIcon = {
+                        Icon(
+                            imageVector = Icons.Filled.Info,
+                            contentDescription = "",
+                        )
+                    },
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Number,
+                        imeAction = ImeAction.Next
+                    ),
+                    singleLine = true,
+                    shape = RoundedCornerShape(50.dp)
+                )
+                Spacer(modifier = Modifier.padding(16.dp))
+                OutlinedTextField(
+                    modifier = Modifier.fillMaxWidth(),
+                    value = nama,
+                    onValueChange = {nama = it},
+                    label = { Text(text = "Nama")},
+                    leadingIcon = {
+                        Icon(
+                            imageVector = Icons.Filled.Person,
+                            contentDescription = "",
+                        )
+                    },
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Text,
+                        imeAction = ImeAction.Next
+                    ),
+                    singleLine = true,
+                    shape = RoundedCornerShape(50.dp)
+                )
+                Spacer(modifier = Modifier.padding(16.dp))
+                OutlinedTextField(
+                    modifier = Modifier.fillMaxWidth(),
+                    value = email,
+                    onValueChange = {email = it},
+                    label = { Text(text = "Email")},
+                    leadingIcon = {
+                        Icon(
+                            imageVector = Icons.Filled.Email,
+                            contentDescription = "",
+                        )
+                    },
+                    keyboardOptions = KeyboardOptions(
+                        keyboardType = KeyboardType.Email,
+                        imeAction = ImeAction.Next
+                    ),
+                    singleLine = true,
+                    shape = RoundedCornerShape(50.dp)
+                )
+                Spacer(modifier = Modifier.padding(16.dp))
+                Row (
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Absolute.SpaceEvenly
                 ){
-                    Text("Masukan Data Kamu",
-                        fontWeight = FontWeight.Light
-                    )
-                    Text("Isi sesuai data yang kamu daftarkan",
-                        fontWeight = FontWeight.Light
-                    )
-                    Spacer(modifier = Modifier.padding(16.dp))
-                    OutlinedTextField(
-                        modifier = Modifier.fillMaxWidth(),
-                        value = nim,
-                        onValueChange = {nim = it},
-                        label = { Text(text = "No Induk Mahasiswa")},
-                        leadingIcon = {
-                            Icon(
-                                imageVector = Icons.Filled.Info,
-                                contentDescription = "",
-                            )
-                        },
-                        keyboardOptions = KeyboardOptions(
-                            keyboardType = KeyboardType.Number,
-                            imeAction = ImeAction.Next
-                        ),
-                        singleLine = true,
-                        shape = RoundedCornerShape(50.dp)
-                    )
-                    Spacer(modifier = Modifier.padding(16.dp))
-                    OutlinedTextField(
-                        modifier = Modifier.fillMaxWidth(),
-                        value = nama,
-                        onValueChange = {nama = it},
-                        label = { Text(text = "Nama")},
-                        leadingIcon = {
-                            Icon(
-                                imageVector = Icons.Filled.Person,
-                                contentDescription = "",
-                            )
-                        },
-                        keyboardOptions = KeyboardOptions(
-                            keyboardType = KeyboardType.Text,
-                            imeAction = ImeAction.Next
-                        ),
-                        singleLine = true,
-                        shape = RoundedCornerShape(50.dp)
-                    )
-                    Spacer(modifier = Modifier.padding(16.dp))
-                    OutlinedTextField(
-                        modifier = Modifier.fillMaxWidth(),
-                        value = email,
-                        onValueChange = {email = it},
-                        label = { Text(text = "Email")},
-                        leadingIcon = {
-                            Icon(
-                                imageVector = Icons.Filled.Email,
-                                contentDescription = "",
-                            )
-                        },
-                        keyboardOptions = KeyboardOptions(
-                            keyboardType = KeyboardType.Email,
-                            imeAction = ImeAction.Next
-                        ),
-                        singleLine = true,
-                        shape = RoundedCornerShape(50.dp)
-                    )
-                    Spacer(modifier = Modifier.padding(16.dp))
-                    Row (
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.Absolute.SpaceEvenly
-                    ){
-                        Button(onClick = {
-                            onBackButtonClicked()
-                        }) {
-                            Text("Kembali")
-                        }
-                        Button(onClick = {
-                            onSubmitButtonClicked(listData)
-                        }) {
-                            Text("Simpan")
-                        }
+                    Button(onClick = {
+                        onBackButtonClicked()
+                    }) {
+                        Text("Kembali")
+                    }
+                    Button(onClick = {
+                        onSubmitButtonClicked(listData)
+                    }) {
+                        Text("Simpan")
                     }
                 }
             }

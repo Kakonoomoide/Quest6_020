@@ -51,7 +51,7 @@ fun PengelolaanHalaman(
                 onBackButtonClicked = {
                     navController.popBackStack()
                 },
-                modifier = Modifier
+                //modifier = Modifier
             )
         }
         composable(route = Halaman.InputMatakuliah.name){
